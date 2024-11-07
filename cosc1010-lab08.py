@@ -14,9 +14,26 @@
 # Other wise return the converted int or float 
 # Floats should only have one decimal point in them 
 
+num = 12
+def string_converter(num):
+    isneg = False
+    if num[0] == "-":
+        num = num.replace("-","")
+        isneg = True
+    if "." in num:
+        num_list = num.split(".")
+        if len(num_list) == 2 and num_list[0].isdigit() and num_list[1].isdigit():
+            if isneg:
+                return -1 * float(num)
+        else:
+            return float(num)
+    elif num.isdigit():
+        if isneg:
+            return -1 * int(num)
+    else:
+        return False
 
 print("*" * 75)
-
 
 # Point-slope y = mx + b
 # This is used in mathematics to determine what the value y would be for any given x
@@ -28,6 +45,11 @@ print("*" * 75)
     # b, the intercept
     # a lower x bound
     # an upper x bound
+
+def slope_intercept("x","b","x_low","x_high"):
+    
+
+
 # Return a list for all values of y for the given x range, inclusive (whole number X's only)
 # Check to make sure that the lower bound is less than or equal to the upper bound
 # m, b can be floats or integers
@@ -38,7 +60,6 @@ print("*" * 75)
 # Remember all inputs are strings, but the function needs ints or floats
 # Call your function and print the resulting list
 
-print("*" * 75)
 
 
 # Write a function to solve the quadratic formula
@@ -48,3 +69,7 @@ print("*" * 75)
 # Create a loop like above to prompt the user for input for the three values
 # Create a second function that just does the square root operation 
     # If the number you are trying to take the square root of is negative, return null
+n = 16
+exp = n ** (1/2)
+print(exp)
+print("*" * 75)
